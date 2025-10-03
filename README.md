@@ -1,11 +1,9 @@
-# Movie-Reccomender
-
-
- 🎬 Movie Recommendation System
+# 🎬 Movie Recommendation System
 
 This Python project implements a **content-based movie recommendation system** using TF-IDF and cosine similarity.
 It stores user input and recommended movies in a MySQL database.
 
+---
 
 ## 📋 Features
 
@@ -20,13 +18,14 @@ It stores user input and recommended movies in a MySQL database.
 
 ## 🛠️ Technologies Used
 
-* Python 
-  Numpy
-  Pandas
-  MySQL Connector
-  scikit-learn TF-IDF, cosine similarity
-  difflib for close string matching
+* **Python 3.x**
+* **NumPy**
+* **Pandas**
+* **MySQL Connector**
+* **scikit-learn (TF-IDF, cosine similarity)**
+* **difflib** for close string matching
 
+---
 
 ## 📂 Project Structure
 
@@ -38,7 +37,7 @@ project/
 └── README.md            # Documentation
 ```
 
-
+---
 
 ## ⚙️ Installation
 
@@ -51,7 +50,7 @@ pip install numpy pandas mysql-connector-python scikit-learn
 
 3. Set up your MySQL database:
 
-sql
+```sql
 CREATE DATABASE Customers_data;
 USE Customers_data;
 
@@ -65,7 +64,7 @@ CREATE TABLE cinephiles (
     reco_4 VARCHAR(255),
     reco_5 VARCHAR(255)
 );
-
+```
 
 4. Place your `movies.csv` file in the project directory.
 
@@ -88,17 +87,20 @@ The program will:
 
 Example input:
 
-
+```
 Enter the user_name: John
 Enter the movie: Avatar
 Enter the mobile num: 9876543210
+```
 
 Output:
 
+```
 Movies suggested are and their genre:
 1. Interstellar , Adventure ,, <homepage_url>
 2. Gravity , Science Fiction ,, <homepage_url>
-
+...
+```
 
 ---
 
@@ -108,17 +110,25 @@ Movies suggested are and their genre:
   `index`, `title`, `genres`, `keywords`, `tagline`, `cast`, `director`, `homepage`.
 * Update your MySQL credentials in the script:
 
+```python
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   password="YOUR_PASSWORD",
   database="Customers_data"
 )
+```
 
 * The script uses the first closest match if multiple titles are similar.
+
+---
 
 ## 🚀 Future Improvements
 
 * Add a web interface for movie recommendations.
 * Support multiple user queries at once.
 * Improve similarity scoring with NLP techniques (Word2Vec, BERT).
+
+---
+
+
